@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rspec-rails'
+# adding Angular.js https://github.com/hiravgandhi/angularjs-rails
+gem 'angularjs-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
