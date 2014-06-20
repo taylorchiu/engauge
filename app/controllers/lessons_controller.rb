@@ -14,16 +14,20 @@ class LessonsController < ApplicationController
 		respond_with Lesson.all
 	end
 
-	def show
+	def create
+		respond_with Lesson.create(lesson_params)
 	end
 
-	def create
+	def show
+		respond_with @lesson
 	end
 
 	def update
+		respond_with @lesson.update(lesson_params)
 	end
 
-	def delete
+	def destroy
+		respond_with @lesson.destroy
 	end
 
 	private
@@ -32,7 +36,7 @@ class LessonsController < ApplicationController
 		end
 
 		def lesson_params
-			params.require(:lesson).permit(:title, :author, :description, :isbn)
+			params.require(:lesson).permit(:name, :expiration, :limit)
 		end
 
 		def render_main_layout_if_format_html

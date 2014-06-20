@@ -8,7 +8,7 @@ EngaugeRouter.config(["$routeProvider", "$locationProvider", ($routeProvider, $l
 		controller: "LessonsCtrl"
 	})
 		# .when("/lessons/:id", {
-		# 	templateUrl: "/lessons/show",
+		# 	templateUrl: "/engauge_templates/index",
 		# 	controller: "LessonDetailCtrl")
 		# })
 		# .otherwise({

@@ -10,8 +10,8 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 		$scope.lessons = data
 
 	$scope.addLesson = ->
-		console.log($scope.newLesson)
 		LessonsFactory.create($scope.newLesson)
+		console.log($scope.newLesson)
 		$scope.newLesson = {}
 		$scope.lessons = LessonsFactory.query();
 
