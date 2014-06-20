@@ -15,6 +15,7 @@ class LessonsController < ApplicationController
 	end
 
 	def create
+		
 		respond_with Lesson.create(lesson_params)
 	end
 

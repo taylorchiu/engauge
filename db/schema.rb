@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620010024) do
+ActiveRecord::Schema.define(version: 20140620013336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 20140620010024) do
     t.datetime "expiration"
     t.integer  "limit"
     t.float    "current_avg"
-    t.integer  "user_id_id"
-    t.integer  "lesson_scores_id_id"
+    t.integer  "user_id"
+    t.integer  "lesson_scores_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "date"
   end
 
-  add_index "lessons", ["lesson_scores_id_id"], name: "index_lessons_on_lesson_scores_id_id", using: :btree
-  add_index "lessons", ["user_id_id"], name: "index_lessons_on_user_id_id", using: :btree
+  add_index "lessons", ["lesson_scores_id"], name: "index_lessons_on_lesson_scores_id", using: :btree
+  add_index "lessons", ["user_id"], name: "index_lessons_on_user_id", using: :btree
 
 end
