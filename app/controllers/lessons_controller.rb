@@ -17,6 +17,7 @@ class LessonsController < ApplicationController
 	def create
 		@lesson = Lesson.new(lesson_params)
 		@lesson.access_code = SecureRandom.urlsafe_base64(5)
+		@lesson.url = SecureRandom.urlsafe_base64(16)
 		@lesson.save
 		# need to add link to common url for students to access lesson
 		# @lesson.url = ""

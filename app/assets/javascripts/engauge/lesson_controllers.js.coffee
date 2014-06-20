@@ -22,6 +22,8 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 
 ])
 
+# LessonDetailCtrl for viewing current lesson details (live view)
+
 EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routeParams", "LessonFactory", ($scope, $http, $routeParams, LessonFactory)->
 	$scope.lesson = LessonFactory.show({id: $routeParams.id});
 
