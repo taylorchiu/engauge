@@ -1,0 +1,20 @@
+engauge_templates/show.html.erb
+
+<h1>Current Lesson</h1>
+
+{{lesson}}
+
+<div id="current_avg">Current: {{lesson.current_avg}}</div>
+
+<ul>
+	<li><b>Lesson Name:</b> {{lesson.name}}</li>
+	<li><b>Lesson Date:</b> {{lesson.date}}</li>
+	<li><b>Share this with students: </b> {{lesson.url}}</li>
+	<li><b>Access code: </b>{{lesson.access_code}}</li>
+	<li><b>Student Score Limit (per hour)</b> {{lesson.limit}}</li>
+</ul>
+
+{{lesson.comments}}
+
+
+<button ng-click="deleteLesson()">Delete</button>

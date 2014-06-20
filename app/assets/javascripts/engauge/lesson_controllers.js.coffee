@@ -1,6 +1,6 @@
 EngaugeControllers = angular.module("EngaugeControllers", [])
 
-# Need a LessonDetailCtrl
+# LessonsCtrl for lessons index to show all lessons and create a new lesson
 
 EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory", "LessonFactory", ($scope, $http, LessonsFactory, LessonFactory)->
 	$scope.lessons = LessonsFactory.query();
@@ -20,4 +20,14 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 		LessonFactory.delete(@lesson)
 		$scope.lessons = LessonsFactory.query();
 
+])
+
+EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routeParams", "LessonFactory", ($scope, $http, $routeParams, LessonFactory)->
+	$scope.lesson = LessonFactory.show({id: $routeParams.id});
+
+	# $scope.lesson = $routeParams.id
+
+	# LessonFactory.show (data)->
+	# 	console.log("Here's Your book!")
+	# 	$scope.lesson = data
 ])

@@ -10,7 +10,7 @@ EngaugeServices.factory("LessonsFactory", ["$resource", ($resource)->
 EngaugeServices.factory("LessonFactory", ["$resource", ($resource)->
 	$resource("/lessons/:id.json", {id: "@id"}, {
 		show: { method: 'GET', params: {id: '@id' } },
-		update: { method: 'PUT', params: {ide: '@id' } },
+		update: { method: 'PUT', params: {id: '@id' } },
 		destroy: { method: 'DELETE', params: {id: '@id'} }
 	})
 ])
