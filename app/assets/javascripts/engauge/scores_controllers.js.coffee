@@ -9,7 +9,8 @@ ScoresControllers.controller("ScoresCtrl", ["$scope", "$http", "$routeParams", "
 	
 	# take user input for score, POST to score model
 	$scope.addScore = ->
-		ScoresFactory.create($scope.newScore)
+		ScoresFactory.create({score: $scope.newScore, lesson_id: $scope.lesson.id})
+		# pass in the lesson_id so that ScoresFactory knows what route to Post to
 		console.log($scope.newScore)
 		$scope.newScore = {};
 		# add logic to display the most recent score and update it when a new score is submitted

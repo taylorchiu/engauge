@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'engauge_templates/student', to: 'engauge_templates#student'
 end
 
+
+
 #                    Prefix Verb   URI Pattern                              Controller#Action
 #                      root GET    /                                        pages#index
 #             lesson_scores GET    /lessons/:lesson_id/scores(.:format)     scores#index
@@ -28,4 +30,5 @@ end
 #   engauge_templates_index GET    /engauge_templates/index(.:format)       engauge_templates#index
 #    engauge_templates_show GET    /engauge_templates/show(.:format)        engauge_templates#show
 # engauge_templates_student GET    /engauge_templates/student(.:format)     engauge_templates#student
+
 

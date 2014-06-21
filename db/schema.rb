@@ -11,20 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620223743) do
+ActiveRecord::Schema.define(version: 20140620200915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "lesson_scores", force: true do |t|
-    t.integer  "lesson_id"
-    t.integer  "score_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "lesson_scores", ["lesson_id"], name: "index_lesson_scores_on_lesson_id", using: :btree
-  add_index "lesson_scores", ["score_id"], name: "index_lesson_scores_on_score_id", using: :btree
 
   create_table "lessons", force: true do |t|
     t.string   "name"
@@ -34,19 +24,15 @@ ActiveRecord::Schema.define(version: 20140620223743) do
     t.integer  "limit"
     t.float    "current_avg"
     t.integer  "user_id"
-    t.integer  "lesson_scores_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "date"
   end
 
-  add_index "lessons", ["lesson_scores_id"], name: "index_lessons_on_lesson_scores_id", using: :btree
   add_index "lessons", ["user_id"], name: "index_lessons_on_user_id", using: :btree
 
   create_table "scores", force: true do |t|
-    t.datetime "timestamp"
     t.float    "score"
-    t.integer  "session_id"
     t.integer  "lesson_id"
     t.integer  "comment_id"
     t.datetime "created_at"
@@ -55,6 +41,5 @@ ActiveRecord::Schema.define(version: 20140620223743) do
 
   add_index "scores", ["comment_id"], name: "index_scores_on_comment_id", using: :btree
   add_index "scores", ["lesson_id"], name: "index_scores_on_lesson_id", using: :btree
-  add_index "scores", ["session_id"], name: "index_scores_on_session_id", using: :btree
 
 end
