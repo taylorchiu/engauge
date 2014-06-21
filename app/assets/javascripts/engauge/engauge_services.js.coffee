@@ -17,6 +17,7 @@ EngaugeServices.factory("LessonFactory", ["$resource", ($resource)->
 
 EngaugeServices.factory("ScoresFactory", ["$resource", ($resource)->
 	$resource("/lessons/:lesson_id/scores.json", {lesson_id: '@lesson_id'}, {
+		query: { method: 'GET', isArray: true },
 		create: { method: 'POST' }
 		})
 ])

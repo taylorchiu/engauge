@@ -5,6 +5,9 @@ class ScoresController < ApplicationController
 	layout :false
 
 	def index
+		@lesson = Lesson.find(params[:lesson_id])
+		@scores = Score.where(lesson_id: @lesson.id)  # does this leave me vulnerable to sql injection?
+		respond_with @scores
 	end
 
 	def show
