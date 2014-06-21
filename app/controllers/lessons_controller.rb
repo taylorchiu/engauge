@@ -19,8 +19,6 @@ class LessonsController < ApplicationController
 		@lesson.access_code = SecureRandom.urlsafe_base64(5)
 		@lesson.url = SecureRandom.urlsafe_base64(16)
 		@lesson.save
-		# need to add link to common url for students to access lesson
-		# @lesson.url = ""
 		respond_with @lesson
 	end
 
@@ -42,7 +40,7 @@ class LessonsController < ApplicationController
 		end
 
 		def lesson_params
-			params.require(:lesson).permit(:name, :expiration, :limit)
+			params.require(:lesson).permit(:name, :expiration, :date, :limit)
 		end
 
 		def render_main_layout_if_format_html
