@@ -5,4 +5,10 @@ class EngaugeTemplatesController < ApplicationController
  	def index
  	end
 
+ 	def student
+ 	end
+
+ 	def show
+ 	end
+
 end

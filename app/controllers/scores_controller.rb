@@ -8,8 +8,16 @@ class ScoresController < ApplicationController
 	end
 
 	def show
-		@lesson = Lesson.find(params[:url])
+		@lesson = Lesson.find_by(url: params[:url])
 		respond_with @lesson
+	end
+
+	def create
+		@lesson = Lesson.find_by(url: params[:url])
+		@score = @lesson.scores.create(score_params)
+		@lesson.save
+binding.pry
+		respond_with @score
 	end
 
 	private

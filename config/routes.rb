@@ -24,7 +24,8 @@ end
 #                           PATCH  /lessons/:id(.:format)                   lessons#update
 #                           PUT    /lessons/:id(.:format)                   lessons#update
 #                           DELETE /lessons/:id(.:format)                   lessons#destroy
-#         student_share_url GET    /students/:url(.:format)                 students#show
+#         student_share_url GET    /students/:url(.:format)                 scores#show
 #   engauge_templates_index GET    /engauge_templates/index(.:format)       engauge_templates#index
 #    engauge_templates_show GET    /engauge_templates/show(.:format)        engauge_templates#show
 # engauge_templates_student GET    /engauge_templates/student(.:format)     engauge_templates#student
+

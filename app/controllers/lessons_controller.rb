@@ -38,7 +38,7 @@ class LessonsController < ApplicationController
 
 	private
 		def set_lesson
-			@lesson = Lesson.find(params[:id])
+			Lesson.find_by(url: params[:id]) ? @lesson = Lesson.find_by(url: params[:id]) : @lesson = Lesson.find(params[:id])
 		end
 
 		def lesson_params
