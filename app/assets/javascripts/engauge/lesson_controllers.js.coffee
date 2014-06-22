@@ -31,4 +31,5 @@ EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routePar
 	console.log("Showing scores of lesson id:" + $routeParams.id)
 	console.log($scope.scores)
 
+
 ])

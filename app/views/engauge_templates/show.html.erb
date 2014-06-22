@@ -12,10 +12,10 @@ engauge_templates/show.html.erb
 	<li><b>Share this with students: </b> https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</li>
 	<li><b>Access code: </b>{{lesson.access_code}}</li>
 	<li><b>Student Score Limit (per hour)</b> {{lesson.limit}}</li>
-	<li><b>All Scores:</b> {{scores}}
+	<li><b>All Scores:</b>
 			<span ng-init="scores"></span>
-			<ul ng-repeat="score in scores">
-				<li>{{scores.score}}</li>
+			<ul ng-repeat="scoreobject in scores">
+				<li>{{scoreobject.score}}</li>
 			</ul>
 
 </ul>

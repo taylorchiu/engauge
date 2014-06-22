@@ -42,7 +42,7 @@ class LessonsController < ApplicationController
 		end
 
 		def lesson_params
-			params.require(:lesson).permit(:name, :expiration, :limit)
+			params.require(:lesson).permit(:name, :expiration, :date, :limit)
 		end
 
 		def render_main_layout_if_format_html

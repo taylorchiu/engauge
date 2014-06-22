@@ -12,6 +12,7 @@ ScoresControllers.controller("ScoresCtrl", ["$scope", "$http", "$routeParams", "
 		ScoresFactory.create({score: $scope.newScore, lesson_id: $scope.lesson.id})
 		# pass in the lesson_id so that ScoresFactory knows what route to Post to
 		console.log($scope.newScore)
+		$scope.lastScore = $scope.newScore.score
 		$scope.newScore = {};
 		# add logic to display the most recent score and update it when a new score is submitted
 
