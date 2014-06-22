@@ -24,7 +24,11 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 
 # LessonDetailCtrl for viewing current lesson details (live view)
 
-EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routeParams", "LessonFactory", ($scope, $http, $routeParams, LessonFactory)->
+EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routeParams", "LessonFactory", "ScoresFactory", ($scope, $http, $routeParams, LessonFactory, ScoresFactory)->
 	$scope.lesson = LessonFactory.show({id: $routeParams.id});
+
+	$scope.scores = ScoresFactory.query({ lesson_id: $routeParams.id})
+	console.log("Showing scores of lesson id:" + $routeParams.id)
+	console.log($scope.scores)
 
 ])

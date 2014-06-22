@@ -5,6 +5,9 @@ class ScoresController < ApplicationController
 	layout :false
 
 	def index
+		@lesson = Lesson.find(params[:lesson_id])
+		@scores = @lesson.scores
+		respond_with @scores
 	end
 
 	def show
