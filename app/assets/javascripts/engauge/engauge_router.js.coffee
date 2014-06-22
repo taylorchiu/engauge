@@ -16,7 +16,7 @@ EngaugeRouter.config(["$routeProvider", "$locationProvider", ($routeProvider, $l
 		})
 		.when("/students/:url", {
 			templateUrl: "/engauge_templates/student",
-			controller: "ScoresCtrl"
+			controller: "StudentCtrl"
 		})
 		.otherwise({
 			redirectTo: "/"

@@ -4,6 +4,7 @@ EngaugeApp = angular.module("EngaugeApp", [
 	"EngaugeServices",
 	"EngaugeControllers",
 	"ScoresControllers",
+	"StudentControllers",
 	"EngaugeRouter",
 	])
 
