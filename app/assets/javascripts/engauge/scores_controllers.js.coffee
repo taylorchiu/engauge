@@ -14,6 +14,7 @@ ScoresControllers.controller("ScoresCtrl", ["$scope", "$http", "$routeParams", "
 	$scope.scores = ScoresFactory.query(lesson_id: $scope.lesson_id);
 	console.log("Retrieving scores array...")
 	console.log($scope.scores)
+	
 	# ScoresFactory.query (data)->
 	# 	console.log("Retrieved all Scores")
 	# 	$scope.scores = data
@@ -22,10 +23,8 @@ ScoresControllers.controller("ScoresCtrl", ["$scope", "$http", "$routeParams", "
 	# console.log($scope.lesson.created_at)
 	# # $scope.lesson.created_at = Date.parse($scope.lesson.created_at);
 
-	
-	# take user input for score, POST to score model
 	$scope.addScore = ->
-		ScoresFactory.create({score: $scope.newScore, lesson_id: $scope.lesson.id})
+		ScoresFactory.create({score: $scope.newScore, lesson_id: $scope.lesson_id})
 		# passes in the lesson_id so that ScoresFactory knows what route to Post to
 		console.log($scope.newScore)
 		$scope.current_score = $scope.newScore.score;
