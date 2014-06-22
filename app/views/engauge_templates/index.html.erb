@@ -29,7 +29,7 @@ engauge_templates/index.html.erb
 		<ul ng-repeat="lesson in lessons">
 		<!-- edit form goes here!! toggle show on and off! -->
 			<li>
-				<a href="/lessons/{{lesson.id}}">{{lesson.name}}</a>
+				<a href="/lessons/{{lesson.id}}/scores">{{lesson.name}}</a>
 				<button ng-click="deleteLesson()">Delete</button>
 			</li>
 		</ul>

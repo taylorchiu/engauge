@@ -3,9 +3,8 @@ engauge_templates/show.html.erb
 <h1>Current Lesson</h1>
 
 {{lesson}}
-
+<!-- don't need to define controller bc the router sets the controller as ScoresCtrl" -->
 <div id="current_avg">Current: {{lesson.current_avg}}</div>
-
 	<ul>
 		<li><b>Lesson Name:</b> {{lesson.name}}</li>
 		<li><b>Lesson Date:</b> {{lesson.date}}</li>
@@ -17,6 +16,7 @@ engauge_templates/show.html.erb
 				<ul ng-repeat="score in scores">
 					<li>{{score.score}}</li>
 				</ul>
+			</li>
 		</div>
 	</ul>
 

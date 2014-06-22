@@ -9,13 +9,15 @@ views/engauge_templates/student.html.erb<br>
 			<input ng-model="newScore.score" type="number" step="0.1" min="0.0" max="5.0">
 			<button>Submit</button>
 		</form>
+	</div>
 
-<h3><b>Current Lesson: </b>{{lesson.name}} </h3><br>
-	<h3><b>Lesson Date: </b>{{lesson.date}} </h3><br>
-	<h3><b>You May Submit Scores Until: </b>{{lesson.expiration}} </h3><br>
-	<h3>You May Score Yourself <b>{{lesson.limit}}</b> Times Per Hour</h3><br>
+<div ng-controller="LessonDetailCtrl">
+	<h3><b>Current Lesson: </b>{{lesson.name}} </h3><br>
+		<h3><b>Lesson Date: </b>{{lesson.date}} </h3><br>
+		<h3><b>You May Submit Scores Until: </b>{{lesson.expiration}} </h3><br>
+		<h3>You May Score Yourself <b>{{lesson.limit}}</b> Times Per Hour</h3><br>
 
-	<h3><b> Most Recent Score: </b>{{current_score}}</h3><br>
-	<h3><b> Your Average Score This Lesson: </b># i don't know how to calculate this yet! </h3><br>
-	<p>Score info: ####</p>
+		<h3><b> Most Recent Score: </b>{{current_score}}</h3><br>
+		<h3><b> Your Average Score This Lesson: </b># i don't know how to calculate this yet! </h3><br>
+		<p>Score info: ####</p>
 </div>
