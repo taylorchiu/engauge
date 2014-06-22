@@ -26,5 +26,7 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 
 EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routeParams", "LessonFactory", ($scope, $http, $routeParams, LessonFactory)->
 	$scope.lesson = LessonFactory.show({id: $routeParams.id});
+	console.log("hitting the LessonDetailCtrl")
+	console.log($routeParams.id)
 
 ])
