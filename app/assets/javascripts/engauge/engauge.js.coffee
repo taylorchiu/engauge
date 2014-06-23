@@ -3,6 +3,7 @@ EngaugeApp = angular.module("EngaugeApp", [
 	"ngResource",
 	"EngaugeServices",
 	"EngaugeControllers",
+	"ScoresControllers",
 	"EngaugeRouter",
 	])
 

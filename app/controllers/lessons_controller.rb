@@ -5,17 +5,22 @@ class LessonsController < ApplicationController
 
 	# return the template without the layout
 	before_action :render_main_layout_if_format_html
-
 	respond_to :json, :html
 
-	layout :false
+
 
 	def index
 		respond_with Lesson.all
 	end
 
 	def create
-		respond_with Lesson.create(lesson_params)
+		@lesson = Lesson.new(lesson_params)
+		@lesson.access_code = SecureRandom.urlsafe_base64(5)
+		@lesson.url = SecureRandom.urlsafe_base64(16)
+		@lesson.save
+		# need to add link to common url for students to access lesson
+		# @lesson.url = ""
+		respond_with @lesson
 	end
 
 	def show
@@ -32,11 +37,11 @@ class LessonsController < ApplicationController
 
 	private
 		def set_lesson
-			@lesson = Lesson.find(params[:id])
+			Lesson.find_by(url: params[:id]) ? @lesson = Lesson.find_by(url: params[:id]) : @lesson = Lesson.find(params[:id])
 		end
 
 		def lesson_params
-			params.require(:lesson).permit(:name, :expiration, :limit)
+			params.require(:lesson).permit(:name, :expiration, :date, :limit)
 		end
 
 		def render_main_layout_if_format_html

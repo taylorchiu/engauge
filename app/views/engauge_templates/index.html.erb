@@ -1,7 +1,13 @@
 engauge_templates/index.html.erb
 
-<h1>Lessons</h1>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
+<h1>Lessons</h1>
 
 <h2>Create a New Lesson</h2>
 
@@ -14,15 +20,15 @@ engauge_templates/index.html.erb
 		<input type="datetime-local" ng-model="newLesson.expiration"></p>
 		# Scores Allowed Per Hour
 			<select name="limit" ng-model="newLesson.limit">
-				<option value="limit1">1</option>
-				<option value="limit2">2</option>
-				<option value="limit3">3</option>
-				<option value="limit4">4</option>
-				<option value="limit6">6</option>
-				<option value="limit12">12</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="6">6</option>
+				<option value="12">12</option>
 				<option value="limitnone">no limit</option>
 			</select></p>
-			<button>Save Lesson</button>
+			<button class="btn-primary">Save Lesson</button>
 	</form>
 
 	<h2>Past Lessons</h2>
@@ -30,5 +36,6 @@ engauge_templates/index.html.erb
 		<!-- edit form goes here!! toggle show on and off! -->
 			<li>
 				<a href="/lessons/{{lesson.id}}">{{lesson.name}}</a>
-				<button ng-click="deleteLesson()">Delete</button></li>
+				<button ng-click="deleteLesson()">Delete</button>
+			</li>
 		</ul>
