@@ -11,19 +11,16 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 			console.log("RETRIEVED ALL LESSONS!")
 			$scope.lessons = data
 
-	# LessonsFactory.query (data)->
-	# 	console.log("RETRIEVED ALL LESSONS!")
-	# 	$scope.lessons = data
 
 	$scope.addLesson = ->
-		LessonsFactory.create($scope.newLesson)
+		LessonsFactory.save($scope.newLesson)
 		console.log($scope.newLesson)
 		$scope.newLesson = {}
 		$scope.lessons = LessonsFactory.query();
 
 	$scope.deleteLesson = ->
 		console.log(@lesson)
-		LessonFactory.delete(@lesson)
+		LessonsFactory.delete(@lesson)
 		$scope.lessons = LessonsFactory.query();
 
 ])

@@ -29,20 +29,21 @@ EngaugeServices.factory("ScoresFactory", ["$resource", ($resource)->
 		create: { method: 'POST' }
 		})
 	
-	# longPoll function takes an interval and a method to continually call
+	# Define a method longPoll, which we will call on the ScoresFactory in the ScoresController
+	# longPoll function takes an interval and a method (callback), which it will continually call on the interval
 	resource.longPoll = (interval, callback)->
 		# protect against calling the same poll twice
 		if resource.pollID != null
 			clearInterval(resource.pollID)
-		# setInterval takes a callback function 
-		# the setInterval function returns a pollID, which we can use to track each poll
+		# setInterval takes a callback function and an interval
+		# the setInterval function returns a pollID, which we can save as resource.pollID and use to track each poll
 		resource.pollID = setInterval ()->
 			callback.call(resource)
 
 		, interval
-	
+
 	resource.stopPoll = ()->
 			clearInterval(resource.pollID)
-
+	# return resource so that you can use it again in the next callback
 	resource
 ])
