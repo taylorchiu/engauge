@@ -1,5 +1,6 @@
 class EngaugeTemplatesController < ApplicationController
-
+	before_action :authorize_user
+	
  	layout :false
  	
  	def index

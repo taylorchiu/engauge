@@ -1,5 +1,12 @@
 engauge_templates/index.html.erb
 
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
 <h1>Lessons</h1>
 
 <h2>Create a New Lesson</h2>

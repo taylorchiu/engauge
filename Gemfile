@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # adding Angular.js https://github.com/hiravgandhi/angularjs-rails
 gem 'angularjs-rails'
-
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

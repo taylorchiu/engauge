@@ -8,9 +8,13 @@
 </head>
 <body ng-app="EngaugeApp">
 	<div class="container">
-
+		<% if user_signed_in? %>
+			<%= button_to "SIGN OUT", destroy_user_session_url, :method => "delete" %>
+		<% else %>
+	 		<a href="<%=new_user_session_url%>"><button>Sign In</button></a>
+		<% end %>
 		<div ng-view></div>
-		
+
 	</div>
 </body>
 </html>

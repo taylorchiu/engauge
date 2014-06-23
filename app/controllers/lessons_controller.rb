@@ -5,10 +5,9 @@ class LessonsController < ApplicationController
 
 	# return the template without the layout
 	before_action :render_main_layout_if_format_html
-
 	respond_to :json, :html
 
-	layout :false
+
 
 	def index
 		respond_with Lesson.all
