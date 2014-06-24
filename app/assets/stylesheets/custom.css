@@ -1,0 +1,65 @@
+@import "bootstrap";
+
+.navbar-header .navbar-brand {
+	font-size: 32px;
+	color: #3D3D3D;
+}
+
+.navbar-right {
+	font-size: 18px;
+	color: #3D3D3D;
+}
+
+.navbar-right li{
+	list-style-type: none;
+	text-decoration: none;
+	display: inline;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover{
+	color: blue;
+}
+
+body{
+	margin: 30px;
+}
+
+.btn {
+	border-radius: 5px;
+	padding: 10px;
+	margin: 5px;
+}
+
+.form {
+	border-radius: 5px;
+	height: 30px;
+	display: inline;
+}
+
+input, input[placeholder]{
+	text-align: center;
+}
+
+.lessons_list li{
+	list-style-type: none;
+}
+
+.lesson_details_list {
+	list-style-type: none;
+}
+
+h1{
+	text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+.score_form {
+	text-align: center;
+}

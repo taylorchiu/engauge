@@ -1,41 +1,38 @@
-engauge_templates/index.html.erb
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+	<% if notice %>
+	  <p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	  <p class="alert alert-danger"><%= alert %></p>
+	<% end %>
+<div class="container">
+	<h1>Lessons</h1>
 
-<h1>Lessons</h1>
+	<button class="btn btn-info">Create a New Lesson</button>
 
-<h2>Create a New Lesson</h2>
+		<form ng-submit="addLesson()">
+			<input type="text" ng-model="newLesson.name" class="form" placeholder="Lesson Name"></p>
+			<input type="date" ng-model="newLesson.date" class="form" placeholder="Date of Lesson"></p>
+			Expiration (optional): <br>
+			<input type="datetime-local" ng-model="newLesson.expiration" class="form"></p>
+			# Scores Allowed Per Hour<br>
+				<select name="limit" ng-model="newLesson.limit">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="12">12</option>
+					<option value="limitnone">no limit</option>
+				</select></p>
+				<button class="btn btn-primary">Save Lesson</button>
+		</form>
 
-	<form ng-submit="addLesson()">
-		Lesson Name:
-		<input type="text" ng-model="newLesson.name"></p>
-		Lesson Date:
-		<input type="date" ng-model="newLesson.date"></p>
-		Expiration Date and Time (optional):
-		<input type="datetime-local" ng-model="newLesson.expiration"></p>
-		# Scores Allowed Per Hour
-			<select name="limit" ng-model="newLesson.limit">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="6">6</option>
-				<option value="12">12</option>
-				<option value="limitnone">no limit</option>
-			</select></p>
-			<button class="btn-primary">Save Lesson</button>
-	</form>
-
-	<h2>Past Lessons</h2>
-		<ul ng-repeat="lesson in lessons">
-		<!-- edit form goes here!! toggle show on and off! -->
-			<li>
-				<a href="/lessons/{{lesson.id}}">{{lesson.name}}</a>
-				<button ng-click="deleteLesson()">Delete</button>
-			</li>
-		</ul>
+		<h2>Past Lessons</h2>
+			<span ng-repeat="lesson in lessons" class="lessons_list">
+				<tr>
+					<td><a href="/lessons/{{lesson.id}}">{{lesson.name}}</a></td>
+					<td><button ng-click="deleteLesson()" >Delete</button></td>
+				</tr>
+			</span>
+</div>
