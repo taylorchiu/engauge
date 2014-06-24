@@ -30,15 +30,42 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routeParams", "LessonsFactory", "ScoresFactory", ($scope, $http, $routeParams, LessonsFactory, ScoresFactory)->
 	$scope.lesson = LessonsFactory.get({id: $routeParams.id});
 
+	
+	array = []
+	
+	calculateAverage = (array) -> 
+		sum = array.reduce (x,y) -> x + y
+		$scope.mean = sum / (array.length)
+		mean = sum / (array.length)
+		console.log("the mean is:" + mean)
+
 	$scope.scores = ScoresFactory.query({ lesson_id: $routeParams.id})
+	$scope.scores.$promise.then (data)->
+			console.log data[0].score
+			for i of data
+				if data[i].score != undefined
+					array.push(data[i].score)
+			console.log array
+			calculateAverage(array)
+
 	console.log("Showing scores of lesson id:" + $routeParams.id)
 	console.log($scope.scores)
 
-	ScoresFactory.longPoll 12000, ()->
+
+	ScoresFactory.longPoll 12000, () ->
 		$scope.scores = ScoresFactory.query({ lesson_id: $routeParams.id})
+		$scope.scores.$promise.then (data)->
+			console.log data[0].score
+			for i of data
+				if data[i].score != undefined
+					array.push(data[i].score)
+			console.log array
+			calculateAverage(array)
 		console.log("Showing scores of lesson id:" + $routeParams.id)
 		console.log($scope.scores)
-		
+
+
 
 
 ])
+
