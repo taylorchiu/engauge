@@ -4,7 +4,7 @@ EngaugeApp = angular.module("EngaugeApp", [
 	"EngaugeServices",
 	"EngaugeControllers",
 	"ScoresControllers",
-	"EngaugeRouter",
+	"EngaugeRouter"
 	])
 
 EngaugeApp.config(["$httpProvider", ($httpProvider)->

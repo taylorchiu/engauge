@@ -5,7 +5,6 @@ EngaugeControllers = angular.module("EngaugeControllers", [])
 EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory", ($scope, $http, LessonsFactory)->
 	$scope.lessons = LessonsFactory.query();
 
-
 	LessonsFactory.longPoll 6000, ()->
 		this.query (data)->
 			console.log("RETRIEVED ALL LESSONS!")
@@ -17,11 +16,13 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 		console.log($scope.newLesson)
 		$scope.newLesson = {}
 		$scope.lessons = LessonsFactory.query();
+		hide_form = !hide_form
 
 	$scope.deleteLesson = ->
 		console.log(@lesson)
 		LessonsFactory.delete(@lesson)
 		$scope.lessons = LessonsFactory.query();
+
 
 ])
 
@@ -64,8 +65,7 @@ EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routePar
 		console.log("Showing scores of lesson id:" + $routeParams.id)
 		console.log($scope.scores)
 
-
-
-
 ])
+
+
 
