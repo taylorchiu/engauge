@@ -35,11 +35,14 @@ EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routePar
 	array = []
 	
 	calculateAverage = (array) -> 
-		sum = array.reduce (x,y) -> x + y
-		$scope.mean = sum / (array.length)
-		mean = sum / (array.length)
-		console.log("the mean is:" + mean)
-
+		if array.length != 0
+			sum = array.reduce (x,y) -> x + y
+			$scope.mean = sum / (array.length)
+			mean = sum / (array.length)
+			console.log("the mean is:" + mean)
+		else
+			mean = "No Scores Available"
+			
 	$scope.scores = ScoresFactory.query({ lesson_id: $routeParams.id})
 	$scope.scores.$promise.then (data)->
 			console.log data[0].score

@@ -1,6 +1,6 @@
 <h1>Current Lesson</h1>
 
-<div id="current_avg">Current Average: {{mean | number: 3}}</div>
+<div id="current_avg">Current Average: {{mean | number: 3}}</div><span ng-hide="array.length">No Scores Yet</span>
 
 <ul class="lesson_details_list">
 	<li><b>Lesson Name:</b> {{lesson.name}}</li>
@@ -9,7 +9,7 @@
 	<li><b>Access code: </b>{{lesson.access_code}}</li>
 	<li><b>Student Score Limit (per hour)</b> {{lesson.limit}}</li>
 	<li><b>Lesson Average (average all scores): {{lesson.current_avg}}</b></li>
-	<li><b>All Scores:</b>
+	<li ng-show="scores.length"><b>All Scores:</b>
 			<span ng-init="scores"></span>
 			<table>
 				<thead>
@@ -27,11 +27,11 @@
 					</tr>
 				</tbody>
 			</table>
-	<li><b>
+	</li><b>
 
 </ul>
 
 {{lesson.comments}}
 
 
-<button ng-click="deleteLesson()">Delete Lesson</button>
+<button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete Lesson</button>
