@@ -4,15 +4,17 @@
   <title>Engauge</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <link rel="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js">
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="EngaugeApp">
+	
 	<div class="container">
-		<% if user_signed_in? %>
-			<%= button_to "SIGN OUT", destroy_user_session_url, :method => "delete" %>
-		<% else %>
-	 		<a href="<%=new_user_session_url%>"><button>Sign In</button></a>
-		<% end %>
+		<%= render 'layouts/header' %>
+	</div>
+
+	<div class="container">
+		
 		<div ng-view></div>
 
 	</div>
