@@ -90,6 +90,11 @@ tbody tr:nth-child(odd) {
 }
 
 .scrollTable {
-	height: 250px;
+	height: 150px;
 	overflow: scroll;
+}
+
+#gauge {
+	width: 700px;
+	height: 400px;
 }
