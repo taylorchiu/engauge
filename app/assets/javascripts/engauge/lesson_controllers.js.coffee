@@ -22,8 +22,6 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 		LessonsFactory.delete(@lesson)
 		LessonsFactory.query (data)->
 			$scope.lessons = data
-		location.reload()
-
 
 ])
 
