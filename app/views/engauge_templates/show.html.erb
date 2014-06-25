@@ -2,6 +2,8 @@
 
 <div id="current_avg">Current Average: {{mean | number: 3}}</div><span ng-hide="array.length">No Scores Yet</span>
 
+<div id="gauge" class="200x160px"></div>
+
 <ul class="lesson_details_list">
 	<li><b>Lesson Name:</b> {{lesson.name}}</li>
 	<li><b>Lesson Date:</b> {{lesson.date | date: 'MMMM d, y' }}</li>
