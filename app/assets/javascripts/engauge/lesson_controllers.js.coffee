@@ -33,41 +33,45 @@ EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routePar
 
 	
 	array = []
-	
-	calculateAverage = (array) -> 
-		if array.length != 0
-			sum = array.reduce (x,y) -> x + y
-			$scope.mean = sum / (array.length)
-			mean = sum / (array.length)
-			console.log("the mean is:" + mean)
+
+	calculateAverage = (scores, gage) -> 
+		$scope.mean = 0
+		if scores.length != 0
+			sum = scores.reduce((x,y) -> 
+			  x + parseInt(y.score)
+			,0)
+			console.log(sum)
+			$scope.mean = sum / (scores.length)
+			console.log("the mean is:" + $scope.mean)
+			gage.value = $scope.mean.toFixed(3)
+			gage.refresh(gage.value = $scope.mean.toFixed(3))
+			console.log(gage.value)
 		else
-			mean = "No Scores Available"
-			
+			$scope.mean = "No Scores Available"
+
+
 	$scope.scores = ScoresFactory.query({ lesson_id: $routeParams.id})
 	$scope.scores.$promise.then (data)->
-			console.log data[0].score
-			for i of data
-				if data[i].score != undefined
-					array.push(data[i].score)
-			console.log array
-			calculateAverage(array)
+			$scope.gage = new JustGage(
+				  id: "gauge"
+				  value: 3
+				  min: 0
+				  max: 5
+				  title: "Current Average"
+				  refreshAnimationTime: 1000
+				  refreshAnimationType: "bounce"
+				)
+			calculateAverage(data, $scope.gage)
 
 	console.log("Showing scores of lesson id:" + $routeParams.id)
 	console.log($scope.scores)
 
 
-	ScoresFactory.longPoll 12000, () ->
+	ScoresFactory.longPoll 4000, () ->
 		$scope.scores = ScoresFactory.query({ lesson_id: $routeParams.id})
 		$scope.scores.$promise.then (data)->
-			console.log data[0].score
-			for i of data
-				if data[i].score != undefined
-					array.push(data[i].score)
-			console.log array
-			calculateAverage(array)
-		console.log("Showing scores of lesson id:" + $routeParams.id)
-		console.log($scope.scores)
-
+			calculateAverage(data, $scope.gage)
+			console.log("Showing scores of lesson id:" + $routeParams.id)
 ])
 
 
