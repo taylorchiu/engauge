@@ -8,7 +8,7 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 
 	$scope.checkID = ()->
 		!!$routeParams.id
-		
+
 	$scope.addLesson = ->
 		LessonsFactory.save($scope.newLesson)
 		console.log($scope.newLesson)
@@ -22,6 +22,7 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 		LessonsFactory.delete(@lesson)
 		LessonsFactory.query (data)->
 			$scope.lessons = data
+		location.reload()
 
 
 ])
@@ -79,12 +80,14 @@ EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routePar
 
 
 		ScoresFactory.longPoll 4000, () ->
-			console.log "Hello World!!"
+			console.log "Long polling scores"
 			ScoresFactory.query { lesson_id: $routeParams.id}, (data)->
 				$scope.scores = data
 				calculateAverage(data, $scope.gage)
 				console.log("Showing scores of lesson id:" + $routeParams.id)
-				# console.log($scope.scores)
+				console.log(data.length)
+				if data.length == 0
+					noScores = true
 
 ])
 

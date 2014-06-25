@@ -45,6 +45,6 @@ class LessonsController < ApiController
 		end
 
 		def lesson_params
-			params.require(:lesson).permit(:name, :expiration, :date, :limit)
+			params.require(:lesson).permit(:name, :date, :limit, :expiration)
 		end
 end

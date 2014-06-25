@@ -7,135 +7,112 @@
 	<% end %>
 
 <div class="container">
-	<h1>Lessons</h1>
-
-<!-- Modal for later -->
-<!-- <button class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"> Create New Lesson</button>
- --><!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-<div class="row">
-	<div class="col-xs-12 col-md-4">
-		<span ng-init="hide_form = true">
-			<button id="addLessonButton" class="btn btn-info" ng-click="hide_form = !hide_form"> Create New Lesson</button>
-		</span>
+	<div class="row">
+		<div class="col-xs-12 col-md-4">
+			<span ng-init="hide_form = true">
+				<button id="addLessonButton" class="btn btn-info" ng-click="hide_form = !hide_form"> Create New Lesson</button>
+			</span>
+		</div>
+		<div class="col-md-8"></div>
 	</div>
-	<div class="col-md-8"></div>
-</div>
 
-<div class="row">
-	<div class="col-xs-12">
-		<span ng-hide="hide_form">
-			<form ng-submit="addLesson()" class="addLessonForm">
-				<em>Expiration and Limit fields are optional</em><br>
-				<input type="text" ng-model="newLesson.name" class="form" placeholder="Lesson Name">
-				<input type="date" ng-model="newLesson.date" class="form" placeholder="Date of Lesson">
-				   Expiration:
-				<input type="date" ng-model="newLesson.expiration" class="form">
-				Limit Per Hour
-					<select name="limit" ng-model="newLesson.limit">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="6">6</option>
-						<option value="12">12</option>
-						<option value="limitnone">no limit</option>
-					</select>
-				<span ng-click="hide_form = !hide_form"><button id="saveLessonButton" class="btn btn-primary">Save Lesson</button></span>
-			</form>
-		</span>
+	<div class="row">
+		<div class="col-xs-12">
+			<span ng-hide="hide_form">
+				<form ng-submit="addLesson()" class="addLessonForm">
+					<em>Expiration and Limit fields are optional</em><br>
+					<input type="text" ng-model="newLesson.name" class="form" placeholder="Lesson Name">
+					<input type="date" ng-model="newLesson.date" class="form" placeholder="Date of Lesson">
+					   Expiration:
+					<input type="date" ng-model="newLesson.expiration" class="form">
+					Limit Per Hour
+						<select name="limit" ng-model="newLesson.limit">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="6">6</option>
+							<option value="12">12</option>
+							<option value="limitnone">no limit</option>
+						</select>
+					<span ng-click="hide_form = !hide_form"><button id="saveLessonButton" class="btn btn-primary">Save Lesson</button></span>
+				</form>
+			</span>
+		</div>
 	</div>
-</div>
 
 
 	<div class="row">
-		<div class="col-md-8">
-			<div class="container" ng-show="checkID()" >
-			<div ng-controller="LessonDetailCtrl">
-
-			<div id="gauge" class="200x160px"></div>
-
-				<h3>Current Lesson</h3>
-
-				<div id="current_avg">Current Average: {{mean | number: 3}}</div><span ng-hide="array.length">No Scores Yet</span>
-
-
-				<ul class="lesson_details_list">
-					<li><b>Lesson Name:</b> {{lesson.name}}</li>
-					<li><b>Lesson Date:</b> {{lesson.date | date: 'MMMM d, y' }}</li>
-					<li><b>Share this with students: </b> <a href="https://www.engaugenow.herokuapp.com/students/"{{lesson.url}}>https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</a></li>
-					<li><b>Access code: </b>{{lesson.access_code}}</li>
-					<li><b>Student Score Limit (per hour)</b> {{lesson.limit}}</li>
-					<li><b>Lesson Average (average all scores): {{lesson.current_avg}}</b></li>
-					<li ng-show="scores.length"><b>All Scores:</b>
-							<span ng-init="scores"></span>
-							<table>
-								<thead>
-									<tr>
-										<th>Value</th>
-										<th>Time</th>
-										<th>Date</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr ng-repeat="scoreobject in scores" class="table table-striped">
-										<td>{{scoreobject.score}}</td>
-										<td>{{scoreobject.created_at | date: 'HH:mm'}}</td>
-										<td>{{scoreobject.created_at | date: 'MM/dd'}}</td>
-									</tr>
-								</tbody>
-							</table>
-					</li><b>
-
-				</ul>
-
-
-
-				<button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete Lesson</button>
-			</div>	
-			</div>
-		</div>
-			<div class="col-md-4" id="lessons_list">
-				<div class="testing">
-				<div class="row">
-					<div class="col-xs-12">
-						<h2 id="past_lessons_h2">Past Lessons</h2>
-					</div>
+		<div class="col-md-2" id="lessons_list">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 id="past_lessons_h2">Past Lessons</h2>
 				</div>
+			</div>
+			<div class="row">
 				<div class="scrollTable">
-					<div class="row">
-						<div class="col-xs-12">
-							<table id="lessons_table" class="table table-striped table-hover">
-								<thead>
-									<th>Name</th>
-									<th>Date</th>
-									<th></th>
-								</thead>
-								<tr ng-repeat="lesson in lessons">
-									<td><a href="/lessons/{{lesson.id}}">{{lesson.name}}</a></td>
-									<td><a href="/lessons/{{lesson.id}}">{{lesson.date}}</a></td>
-									<td><button class="btn btn-xs btn-danger" ng-click="deleteLesson()" >Delete</button></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+				<div class="col-xs-12">
+					<table id="lessons_table" class="table table-striped table-hover">
+						<thead>
+							<th>Name</th>
+							<th>Date</th>
+							<th></th>
+						</thead>
+						<tr ng-repeat="lesson in lessons">
+							<td><a href="/lessons/{{lesson.id}}">{{lesson.name}}</a></td>
+							<td><a href="/lessons/{{lesson.id}}">{{lesson.date}}</a></td>
+							<td><button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete Lesson</button></td>
+						</tr>
+					</table>
+				</div> <!-- bootstrap col-xs-12 -->
+			</div> <!-- scrollTable -->
+			</div>  <!-- row -->
+		</div> <!-- col-md-2 -->
+		<div class="col-md-10">I'm an empty col-md-10!</div>
+	</div> <!-- past lessons row -->
+
+	<div class="row">
+		<div ng-controller="LessonDetailCtrl">
+			<div class="col-md-2">
+				<div ng-show="checkID()" >
+					<ul class="lesson_details_list">
+						<li><h2>{{lesson.name}}</h2>
+						<li><b>Current Average: </b></li>
+						<li>{{mean | number: 3}}</li>
+						<li><b>Lesson Date:</b><li>
+						<li>{{lesson.date | date: 'MMMM d, y' }}</li>
+						<li><b>Share this with students: </b> <a href="https://www.engaugenow.herokuapp.com/students/"{{lesson.url}}>https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</a></li>
+						<li><b>Access code: </b></li>
+						<li>{{lesson.access_code}}</li>
+						<li><b>Limit (per hour)</b></li>
+						<li>{{lesson.limit}}</li>
+						<li><button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete Lesson</button></li>
+					</ul>
+				</div>  <!-- ng-show checkID -->
+			</div> <!-- bootstrap col-md-2 -->
+				<div class="col-md-10">
+					<div id="gauge" class="200x160px"></div>
+					<div ng-show="scores.length">
+						<b>All Scores:</b>
+							<span ng-init="scores"></span>
+								<table class="table table-striped table-">
+									<thead>
+										<tr>
+											<th>Value</th>
+											<th>Time</th>
+											<th>Date</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="scoreobject in scores" class="table table-striped table-condensed">
+											<td>{{scoreobject.score}}</td>
+											<td>{{scoreobject.created_at | date: 'HH:mm'}}</td>
+											<td>{{scoreobject.created_at | date: 'MM/dd'}}</td>
+										</tr>
+									</tbody>
+								</table>
+					</div> <!-- ng-show scores.length -->
+				</div> <!-- col-md-10 -->
+			</div> <!-- ng-controller -->
+	</div> <!-- bootstrap row -->
+</div> <!-- container -->
