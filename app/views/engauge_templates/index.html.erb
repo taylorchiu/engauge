@@ -5,6 +5,7 @@
 	<% if alert %>
 	  <p class="alert alert-danger"><%= alert %></p>
 	<% end %>
+
 <div class="container">
 	<h1>Lessons</h1>
 
@@ -27,35 +28,67 @@
     </div>
   </div>
 </div> -->
-<span ng-init="hide_form = true">
-	<button id="addLessonButton" class="btn btn-info" ng-click="hide_form = !hide_form"> Create New Lesson</button>
-</span>
+<div class="row">
+	<div class="col-xs-12 col-md-4">
+		<span ng-init="hide_form = true">
+			<button id="addLessonButton" class="btn btn-info" ng-click="hide_form = !hide_form"> Create New Lesson</button>
+		</span>
+	</div>
+	<div class="col-md-8">the rest of this row</div>
+</div>
 
-	<span ng-hide="hide_form">
-		<form ng-submit="addLesson()" id="addLessonForm">
-			<input type="text" ng-model="newLesson.name" class="form" placeholder="Lesson Name"></p>
-			<input type="date" ng-model="newLesson.date" class="form" placeholder="Date of Lesson"></p>
-			Expiration (optional): <br>
-			<input type="datetime-local" ng-model="newLesson.expiration" class="form"></p>
-			# Scores Allowed Per Hour<br>
-				<select name="limit" ng-model="newLesson.limit">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="6">6</option>
-					<option value="12">12</option>
-					<option value="limitnone">no limit</option>
-				</select></p>
-				<span ng-click="hide_form = !hide_form"><button class="btn btn-primary">Save Lesson</button></span>
-		</form>
-	</span>
+<div class="row">
+	<div class="col-xs-12">
+		<span ng-hide="hide_form">
+			<form ng-submit="addLesson()" class="addLessonForm">
+				<em>Expiration and Limit fields are optional</em><br>
+				<input type="text" ng-model="newLesson.name" class="form" placeholder="Lesson Name">
+				<input type="date" ng-model="newLesson.date" class="form" placeholder="Date of Lesson">
+				   Expiration:
+				<input type="date" ng-model="newLesson.expiration" class="form">
+				Limit Per Hour
+					<select name="limit" ng-model="newLesson.limit">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="6">6</option>
+						<option value="12">12</option>
+						<option value="limitnone">no limit</option>
+					</select>
+				<span ng-click="hide_form = !hide_form"><button id="saveLessonButton" class="btn btn-primary">Save Lesson</button></span>
+			</form>
+		</span>
+	</div>
+</div>
 
-		<h2>Past Lessons</h2>
-			<table>
-				<tr ng-repeat="lesson in lessons" class="lessons_list">
-					<td><a href="/lessons/{{lesson.id}}">{{lesson.name}}</a></td>
-					<td><button class="btn btn-sml btn-danger" ng-click="deleteLesson()" >Delete</button></td>
-				</tr>
-			</table>
+
+	<div class="row">
+		<div class="col-md-8"></div>
+			<div class="col-md-4" id="lessons_list">
+				<div class="testing">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2 id="past_lessons_h2">Past Lessons</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<table id="lessons_table" class="table table-striped table-hover">
+							<thead>
+								<th>Name</th>
+								<th>Date</th>
+								<th></th>
+							</thead>
+							<tr ng-repeat="lesson in lessons">
+								<td><a href="/lessons/{{lesson.id}}">{{lesson.name}}</a></td>
+								<td><a href="/lessons/{{lesson.id}}">{{lesson.date}}</a></td>
+								<td><button class="btn btn-xs btn-danger" ng-click="deleteLesson()" >Delete</button></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

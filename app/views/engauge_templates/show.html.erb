@@ -1,39 +1,42 @@
-<h1>Current Lesson</h1>
+<div class="container">
 
-<div id="current_avg">Current Average: {{mean | number: 3}}</div><span ng-hide="array.length">No Scores Yet</span>
+	<h1>Current Lesson</h1>
 
-<div id="gauge" class="200x160px"></div>
+	<div id="current_avg">Current Average: {{mean | number: 3}}</div><span ng-hide="array.length">No Scores Yet</span>
 
-<ul class="lesson_details_list">
-	<li><b>Lesson Name:</b> {{lesson.name}}</li>
-	<li><b>Lesson Date:</b> {{lesson.date | date: 'MMMM d, y' }}</li>
-	<li><b>Share this with students: </b> <a href="https://www.engaugenow.herokuapp.com/students/"{{lesson.url}}>https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</a></li>
-	<li><b>Access code: </b>{{lesson.access_code}}</li>
-	<li><b>Student Score Limit (per hour)</b> {{lesson.limit}}</li>
-	<li><b>Lesson Average (average all scores): {{lesson.current_avg}}</b></li>
-	<li ng-show="scores.length"><b>All Scores:</b>
-			<span ng-init="scores"></span>
-			<table>
-				<thead>
-					<tr>
-						<th>Value</th>
-						<th>Time</th>
-						<th>Date</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="scoreobject in scores" class="table table-striped">
-						<td>{{scoreobject.score}}</td>
-						<td>{{scoreobject.created_at | date: 'HH:mm'}}</td>
-						<td>{{scoreobject.created_at | date: 'MM/dd'}}</td>
-					</tr>
-				</tbody>
-			</table>
-	</li><b>
+	<div id="gauge" class="200x160px"></div>
 
-</ul>
+	<ul class="lesson_details_list">
+		<li><b>Lesson Name:</b> {{lesson.name}}</li>
+		<li><b>Lesson Date:</b> {{lesson.date | date: 'MMMM d, y' }}</li>
+		<li><b>Share this with students: </b> <a href="https://www.engaugenow.herokuapp.com/students/"{{lesson.url}}>https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</a></li>
+		<li><b>Access code: </b>{{lesson.access_code}}</li>
+		<li><b>Student Score Limit (per hour)</b> {{lesson.limit}}</li>
+		<li><b>Lesson Average (average all scores): {{lesson.current_avg}}</b></li>
+		<li ng-show="scores.length"><b>All Scores:</b>
+				<span ng-init="scores"></span>
+				<table>
+					<thead>
+						<tr>
+							<th>Value</th>
+							<th>Time</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="scoreobject in scores" class="table table-striped">
+							<td>{{scoreobject.score}}</td>
+							<td>{{scoreobject.created_at | date: 'HH:mm'}}</td>
+							<td>{{scoreobject.created_at | date: 'MM/dd'}}</td>
+						</tr>
+					</tbody>
+				</table>
+		</li><b>
 
-{{lesson.comments}}
+	</ul>
+
+	<canvas id="myChart" width="400" height="400"></canvas>
 
 
-<button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete Lesson</button>
+	<button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete Lesson</button>
+</div>	

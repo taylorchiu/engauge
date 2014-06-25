@@ -15,6 +15,9 @@
 	display: inline;
 }
 
+.container {
+	border: 1px solid red;
+}
 a {
 	text-decoration: none;
 }
@@ -31,14 +34,14 @@ body{
 	border-radius: 5px;
 	height: 30px;
 	display: inline;
+	margin: 5px;
 }
 
-input, input[placeholder]{
-	text-align: center;
-}
-
-.lessons_list li{
+.lessons_list {
 	list-style-type: none;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
 }
 
 .lesson_details_list {
@@ -59,4 +62,32 @@ tbody tr:nth-child(odd) {
 
 .homepage {
 	text-align: center;
+}
+
+.testing {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.addLessonForm {
+	display: inline;
+	padding: 10px;
+}
+
+#addLessonButton {
+	margin: 10px;
+}
+
+#saveLessonButton {
+	margin: 10px;
+}
+
+#past_lessons_h2 {
+	text-align: center;
+}
+
+.lessons_table {
+	padding: 10px;
+	margin: 10px;
 }
