@@ -52,10 +52,10 @@
 	</span>
 
 		<h2>Past Lessons</h2>
-			<span ng-repeat="lesson in lessons" class="lessons_list">
-				<tr>
+			<table>
+				<tr ng-repeat="lesson in lessons" class="lessons_list">
 					<td><a href="/lessons/{{lesson.id}}">{{lesson.name}}</a></td>
 					<td><button class="btn btn-sml btn-danger" ng-click="deleteLesson()" >Delete</button></td>
 				</tr>
-			</span>
+			</table>
 </div>

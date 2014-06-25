@@ -1,10 +1,12 @@
-class LessonsController < ApplicationController
-
+class LessonsController < ApiController
+	include LessonsHelper
+	# # authorize the user before loading lesson
+	# before_filter :check_lesson_owner, only: [] 
+	
 	# use a private method to load the desired lesson
 	before_action :set_lesson, only: [:show, :update, :destroy]
+	before_action :check_lesson_owner, only: [:update, :destroy]
 
-	# return the template without the layout
-	before_action :render_main_layout_if_format_html
 	respond_to :json, :html
 
 
@@ -18,8 +20,6 @@ class LessonsController < ApplicationController
 		@lesson.access_code = SecureRandom.urlsafe_base64(5)
 		@lesson.url = SecureRandom.urlsafe_base64(16)
 		@lesson.save
-		# need to add link to common url for students to access lesson
-		# @lesson.url = ""
 		respond_with @lesson
 	end
 
@@ -40,14 +40,11 @@ class LessonsController < ApplicationController
 			Lesson.find_by(url: params[:id]) ? @lesson = Lesson.find_by(url: params[:id]) : @lesson = Lesson.find(params[:id])
 		end
 
-		def lesson_params
-			params.require(:lesson).permit(:name, :expiration, :date, :limit)
+		def check_lesson_owner
+#      raise "Not your lesson" unless @lesson.user_id == current_user.try :id
 		end
 
-		def render_main_layout_if_format_html
-			# check the request format
-			if request.format.symbol == :html
-				render "layouts/application"
-			end
+		def lesson_params
+			params.require(:lesson).permit(:name, :expiration, :date, :limit)
 		end
 end

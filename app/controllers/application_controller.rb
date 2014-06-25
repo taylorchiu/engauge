@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+
+	# when i add the following line, i get an infinite loop on the home page...why?! 
+  # before_filter :authenticate_user!
+
 end

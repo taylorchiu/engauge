@@ -1,4 +1,4 @@
-/*
+
 .navbar-header .navbar-brand {
 	font-size: 32px;
 	color: #3D3D3D;
@@ -27,12 +27,6 @@ body{
 	margin: 30px;
 }
 
-.btn {
-	border-radius: 5px;
-	padding: 10px;
-	margin: 5px;
-}
-
 .form {
 	border-radius: 5px;
 	height: 30px;
@@ -51,7 +45,7 @@ input, input[placeholder]{
 	list-style-type: none;
 }
 
-h1{
+h1 {
 	text-align: center;
 }
 
@@ -62,4 +56,7 @@ tbody tr:nth-child(odd) {
 .score_form {
 	text-align: center;
 }
-*/
+
+.homepage {
+	text-align: center;
+}

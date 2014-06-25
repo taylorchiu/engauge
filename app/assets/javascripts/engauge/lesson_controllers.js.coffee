@@ -58,8 +58,6 @@ EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routePar
 				  min: 0
 				  max: 5
 				  title: "Current Average"
-				  refreshAnimationTime: 1000
-				  refreshAnimationType: "bounce"
 				)
 			calculateAverage(data, $scope.gage)
 
