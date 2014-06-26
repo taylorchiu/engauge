@@ -2,13 +2,12 @@
 <html>
 <head>
   <title>Engauge</title>
+  <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <link rel="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js">
 	<script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script>
-  <script src="//cdn.jsdelivr.net/justgage/1.0.1/justgage.js"></script>
-
-
+  <script src="//cdn.jsdelivr.net/justgage/1.0.1/justgage.js"></script>		
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="EngaugeApp">
@@ -20,5 +19,12 @@
 	<div class="container">
 	  <%= yield %>
  	</div>
+
+	<footer class="navbar-default navbar-fixed-bottom">
+		 	<ul class="footer">
+		 		<li>Copyright <a href="www.github.com/taylorchiu">Taylor Parker Chiu</a>, 2014<li><a href="http://www.github.com/taylorchiu/engauge">Github</a></li>
+		 	</ul>
+	</footer>
 </body>
+
 </html>

@@ -1,11 +1,27 @@
-.navbar-header .navbar-brand {
-	font-size: 32px;
-	color: #3D3D3D;
+.navbar .navbar-default-fluid{
+	margin: 0px;
+	width: 100% !important;
 }
 
-.navbar-right {
-	font-size: 18px;
-	color: #3D3D3D;
+.navbar-header .navbar-brand {
+	font-family: 'Electrolize', sans-serif;
+	font-size: 44px;
+	color: #f8f8f8;
+}
+
+ul.navbar.nav:hover {
+	background-color: #808080;
+}
+
+.navbar_li a{
+	color: #f8f8f8 !important;
+	font-family: 'Electrolize', sans-serif !important;
+	font-size: 20px;
+
+}
+
+.navbar li a:hover{
+	color: #ED3300 !important;
 }
 
 .navbar-right li{
@@ -14,17 +30,37 @@
 	display: inline;
 }
 
-.container {
-	border: 1px solid red;
+.navbar_li:hover {
+	background-color: #808080;
+	color: #ED3300;
+}
+
+.navbar-brand:hover {
+	background-color: #808080;
+	color: #ED3300;
 }
 
 a {
 	text-decoration: none;
+	color: #ED3300;
 }
 
 a:hover{
-	color: blue;
+	color: #ED3300;
 }
+
+.explain h3 {
+	text-align: center;
+}
+
+.explain ol li {
+	text-align: justify;
+}
+
+.container {
+	width: 100%;
+}
+
 
 .form {
 	border-radius: 5px;
@@ -53,6 +89,7 @@ ul {
 
 h1 {
 	text-align: center;
+	font-family: 'Electrolize', sans-serif;
 }
 
 tbody tr:nth-child(odd) {
@@ -65,6 +102,12 @@ tbody tr:nth-child(odd) {
 
 .homepage {
 	text-align: center;
+	font-family: 'Electrolize', sans-serif !important;
+}
+
+.homepage h1 {
+	font-size: 80px !important;
+	font-weight: bold !important;
 }
 
 .addLessonForm {
@@ -74,6 +117,17 @@ tbody tr:nth-child(odd) {
 
 #addLessonButton {
 	margin: 10px;
+	color: white;
+	background-color: #404040;
+	border: 1px solid #404040;
+	font-size: 18px;
+
+}
+
+#addLessonButton:hover {
+	background-color: #6E6E6E;
+	border: 1px solid #6E6E6E;
+	color: #ED3300;
 }
 
 #saveLessonButton {
@@ -98,3 +152,30 @@ tbody tr:nth-child(odd) {
 	width: 700px;
 	height: 400px;
 }
+
+.studentPage h1 {
+	font-family: 'Electrolize', sans-serif;
+}
+
+.studentPage h3 {
+	font-family: 'Electrolize', sans-serif;
+}
+
+.studentLesson li{
+	list-style-type: none;
+}
+footer.navbar-default.navbar-fixed-bottom {
+  background:#f8f8f8;
+  border: 1px solid #e7e7e7;
+  color: #404040;
+  padding:1em 0;
+ }
+ 
+ footer.navbar-default.navbar-fixed-bottom p {
+   margin:0;
+ }
+
+ ul.footer li{
+ 	display: inline;
+ 	padding-left: 40px;
+ }
