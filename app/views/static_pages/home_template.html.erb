@@ -11,6 +11,11 @@
 				<h3>What Is It?</h3>
 				<h5>Engauge is a feedback loop for teachers to track student comprehension during and after class. </h5>
 			</div>
+			<div class="col-md-4" >
+				<div ng-controller="ModalDemoCtrl">
+           <h3 ng-click="open()" id="explain_h3">Quick, Easy Feedback For Teachers</h3>
+       	</div>
+      </div>
 			<div class="col-md-4">
 				<h3>How Does It Work?</h3>
 				<h5><ol>
@@ -18,17 +23,7 @@
 					<li>Students report understanding with one click</li>
 					<li>Teacher sees updates instantly</li>
 			</div>
-			<div class="col-md-4" ></div>
-				<div ng-controller="ModalDemoCtrl">
-            <h3><button ng-click="open()" class="btn btn-info">Watch a 60 Second Video</button></h3>
-        </div>
-
-				<div class="signup_button">
-					<% unless user_signed_in? %>
-						 <a href="<%=new_user_registration_url%>" ><button class="btn btn-primary">Sign Up</button></a>
-					<% end %>
-				</div>
-			</div>
+		</div>
 
 	
 			<script type="text/ng-template" id="myModalContent.html">
