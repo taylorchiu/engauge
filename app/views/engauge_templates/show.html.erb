@@ -9,7 +9,7 @@
 	<ul class="lesson_details_list">
 		<li><b>Lesson Name:</b> {{lesson.name}}</li>
 		<li><b>Lesson Date:</b> {{lesson.date | date: 'MMMM d, y' }}</li>
-		<li><b>Share this with students: </b> <a href="https://www.engaugenow.herokuapp.com/students/"{{lesson.url}}>https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</a></li>
+		<li><b>Share this with students: </b> <a href="https://www.engaugenow.herokuapp.com/students/<%= @lesson.url %>">https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</a></li>
 		<li><b>Access code: </b>{{lesson.access_code}}</li>
 		<li><b>Student Score Limit (per hour)</b> {{lesson.limit}}</li>
 		<li><b>Lesson Average (average all scores): {{lesson.current_avg}}</b></li>
