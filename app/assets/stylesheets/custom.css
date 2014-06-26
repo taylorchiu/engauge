@@ -102,6 +102,8 @@ tbody tr:nth-child(odd) {
 
 .score_form li {
 	list-style-type: none;
+	display: inline;
+	margin: 10px;
 }
 
 .homepage {

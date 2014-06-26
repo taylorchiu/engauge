@@ -18,23 +18,37 @@
 					<li>Students report understanding with one click</li>
 					<li>Teacher sees updates instantly</li>
 			</div>
-			<div class="col-md-4"></div>
-				<h3><button class="btn btn-info">Watch a 60 Second Video</button></h3>
-				<h5>Or don't.</h5>
+			<div class="col-md-4" ></div>
+				<div ng-controller="ModalDemoCtrl">
+            <h3><button ng-click="open()" class="btn btn-info">Watch a 60 Second Video</button></h3>
+        </div>
+
+				<div class="signup_button">
+					<% unless user_signed_in? %>
+						 <a href="<%=new_user_registration_url%>" ><button class="btn btn-primary">Sign Up</button></a>
+					<% end %>
+				</div>
 			</div>
-		</div>
-	</div>
 
-
-
-	<div id="b"></div>
-		<script src='https://www.teachingchannel.org/videos/getting-instant-student-feedback/embed?format=js' type='text/javascript'>document.write(embedBody);
-
-</script>
 	
+			<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">About this site</h3>
+        </div>
+        <div class="modal-body">
+    			<p><a href="https://www.teachingchannel.org/videos/getting-instant-student-feedback">60 Seconds on The Value of Instant Student Feedback</a></p>
+        	<p>EnGauge was created as my final project for a 12-week intensive coding course at General Assembly in San Francisco. I used AngularJS, Coffeescript and Ruby on Rails to build this project from scratch in one week. Other technologies I used were JQuery, Raphael, Angular UI for Bootstrap, Devise, and long polling.
+        	<p><a href="http://www.github.com/taylorchiu/engauge">github.com/taylorchiu/engauge</a></p>
+        	<p><a href="http://www.taylorparkerchiu.tumblr.com">taylorparkerchiu.tumblr.com</a> </p>
+        	<p><a href="http://www.linkedin.com/in/taylorchiu">LinkedIn</a> </p>
+        	<p> ~ Taylor Parker Chiu</p>
+        	<p>June 26, 2014</p>	
+        </div>
+        <div class="modal-footer">
+ 						<em>Click outside the box to close</em>
+        </div>
+			</script>
 
-	<div class="signup_button">
-		<% unless user_signed_in? %>
-			 <a href="<%=new_user_registration_url%>" ><button class="btn btn-primary">Sign Up</button></a>
-		<% end %>
-	</div>
+
+
+
