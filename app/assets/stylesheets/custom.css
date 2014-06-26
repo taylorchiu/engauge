@@ -100,6 +100,10 @@ tbody tr:nth-child(odd) {
 	text-align: center;
 }
 
+.score_form li {
+	list-style-type: none;
+}
+
 .homepage {
 	text-align: center;
 	font-family: 'Electrolize', sans-serif !important;
@@ -164,6 +168,11 @@ tbody tr:nth-child(odd) {
 .studentLesson li{
 	list-style-type: none;
 }
+
+form.addScore input{
+	margin: 8px;
+}
+
 footer.navbar-default.navbar-fixed-bottom {
   background:#f8f8f8;
   border: 1px solid #e7e7e7;
