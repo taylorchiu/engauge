@@ -19,6 +19,7 @@ class LessonsController < ApiController
 		@lesson = Lesson.new(lesson_params)
 		@lesson.access_code = SecureRandom.urlsafe_base64(5)
 		@lesson.url = SecureRandom.urlsafe_base64(16)
+		@lesson.user_id = current_user.id
 		@lesson.save
 		respond_with @lesson
 	end
@@ -32,7 +33,10 @@ class LessonsController < ApiController
 	end
 
 	def destroy
-		respond_with @lesson.destroy
+		if @lesson.user_id = current_user.id
+			respond_with @lesson.destroy
+		else
+			
 	end
 
 	private
