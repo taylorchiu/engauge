@@ -1,24 +1,40 @@
-<h1>How Confident Are You About The Current Lesson Material? </h1>
+<div class="studentPage">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-3">
+			<a href="http://imgur.com/AzDIEh3"><img src="http://i.imgur.com/AzDIEh3.jpg" class="gears"/></a>
+		</div>
+		<div class="col-md-6"><h1>Gauge Your Understanding</h1></div>
+	</div>
 
-<h2> ***** Clicakble SVG graphic woo ******* </h2>
 
-	<div ng-controller="ScoresCtrl">
-	<span  class="score_form">
-		<p>On a scale of 0-5, 0 being the worst and 5 being the best, please rate how comfortable you feel with the current lesson material:</p>
-		<form ng-submit="addScore()">
-			<input ng-model="newScore.score" type="radio" value="1">1
-			<input ng-model="newScore.score" type="radio" value="2">2
-			<input ng-model="newScore.score" type="radio" value="3">3
-			<input ng-model="newScore.score" type="radio" value="4">4
-			<input ng-model="newScore.score" type="radio" value="5">5
-			<button>Submit</button>
-		</form>
-	</span>
 
-<li><b>Current Lesson: </b>{{lesson.name}} </li>
-	<li><b>Lesson Date: </b>{{lesson.date}} </li>
-	<li><b>You May Submit Scores Until: </b>{{lesson.expiration}} </li>
-	<li>You May Score Yourself <b>{{lesson.limit}}</b> Times Per Hour</li>
-	<li><b> Most Recent Score: </b>{{lastScore}}<span ng-hide="lastScore">None</span></li>
-	<li><b> Your Average Score This Lesson: </b># i don't know how to calculate this yet! </li>
+
+		<div ng-controller="ScoresCtrl">
+		<span  class="score_form">
+			<h4>On a scale of 0-5, 0 being the worst and 5 being the best, please rate how comfortable you feel with the current lesson material:</h4>
+			<ul>
+				<li>Do you understand the concepts?</li>
+				<li>Can you answer questions correctly?</li>
+				<li>Is the lecture engaging?</li>
+			</ul>
+			<form ng-submit="addScore()" class="addScore">
+				<input ng-model="newScore.score" type="radio" value="0">0
+				<input ng-model="newScore.score" type="radio" value="1">1
+				<input ng-model="newScore.score" type="radio" value="2">2
+				<input ng-model="newScore.score" type="radio" value="3">3
+				<input ng-model="newScore.score" type="radio" value="4">4
+				<input ng-model="newScore.score" type="radio" value="5">5
+				<br>
+				<button class="btn btn-sm btn-info">Submit</button>
+			</form>
+		</span>
+		<br>
+		<ul class="studentLesson">
+			<li><b>Current Lesson: </b>{{lesson.name}} </li>
+			<li><b>Lesson Date: </b>{{lesson.date}} </li>
+			<li><b>Limit (per hour) </b>{{lesson.limit}}</li>
+			<li><b>Most Recent Score: </b>{{lastScore}}<span ng-hide="lastScore">None</span></li>
+		</ul>
+	</div>
 </div>

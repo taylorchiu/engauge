@@ -1,8 +1,6 @@
-class ScoresController < ApplicationController
-	before_action :render_main_layout_if_format_html
+class ScoresController < ApiController
 
 	respond_to :json, :html
-	layout :false
 
 	def index
 		@lesson = Lesson.find(params[:lesson_id])
@@ -26,13 +24,6 @@ class ScoresController < ApplicationController
 	private
 		def score_params
 			params.require(:score).permit(:timestamp, :score, :lesson_id)
-		end
-
-		def render_main_layout_if_format_html
-			# check the request format
-			if request.format.symbol == :html
-				render "layouts/application"
-			end
 		end
 
 end

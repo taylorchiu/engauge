@@ -1,12 +1,27 @@
-/*
-.navbar-header .navbar-brand {
-	font-size: 32px;
-	color: #3D3D3D;
+.navbar .navbar-default-fluid{
+	margin: 0px;
+	width: 100% !important;
 }
 
-.navbar-right {
-	font-size: 18px;
-	color: #3D3D3D;
+.navbar-header .navbar-brand {
+	font-family: 'Electrolize', sans-serif;
+	font-size: 44px;
+	color: #f8f8f8;
+}
+
+ul.navbar.nav:hover {
+	background-color: #808080;
+}
+
+.navbar_li a{
+	color: #f8f8f8 !important;
+	font-family: 'Electrolize', sans-serif !important;
+	font-size: 20px;
+
+}
+
+.navbar li a:hover{
+	color: #ED3300 !important;
 }
 
 .navbar-right li{
@@ -15,44 +30,66 @@
 	display: inline;
 }
 
+.navbar_li:hover {
+	background-color: #808080;
+	color: #ED3300;
+}
+
+.navbar-brand:hover {
+	background-color: #808080;
+	color: #ED3300;
+}
+
 a {
 	text-decoration: none;
+	color: #ED3300;
 }
 
 a:hover{
-	color: blue;
+	color: #ED3300;
 }
 
-body{
-	margin: 30px;
+.explain h3 {
+	text-align: center;
 }
 
-.btn {
-	border-radius: 5px;
-	padding: 10px;
-	margin: 5px;
+.explain ol li {
+	text-align: justify;
 }
+
+.container {
+	width: 100%;
+}
+
 
 .form {
 	border-radius: 5px;
 	height: 30px;
 	display: inline;
+	margin: 5px;
 }
 
-input, input[placeholder]{
+.lessons_list {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	list-style-type: none;
 	text-align: center;
 }
 
-.lessons_list li{
-	list-style-type: none;
+ul {
+	margin-left: 0px;
 }
 
 .lesson_details_list {
+	margin-top: 30px;
 	list-style-type: none;
+	word-wrap: break-word;
 }
 
-h1{
+h1 {
 	text-align: center;
+	font-family: 'Electrolize', sans-serif;
 }
 
 tbody tr:nth-child(odd) {
@@ -62,4 +99,92 @@ tbody tr:nth-child(odd) {
 .score_form {
 	text-align: center;
 }
-*/
+
+.score_form li {
+	list-style-type: none;
+}
+
+.homepage {
+	text-align: center;
+	font-family: 'Electrolize', sans-serif !important;
+}
+
+.homepage h1 {
+	font-size: 80px !important;
+	font-weight: bold !important;
+}
+
+.addLessonForm {
+	display: inline;
+	padding: 10px;
+}
+
+#addLessonButton {
+	margin: 10px;
+	color: white;
+	background-color: #404040;
+	border: 1px solid #404040;
+	font-size: 18px;
+
+}
+
+#addLessonButton:hover {
+	background-color: #6E6E6E;
+	border: 1px solid #6E6E6E;
+	color: #ED3300;
+}
+
+#saveLessonButton {
+	margin: 10px;
+}
+
+#past_lessons_h2 {
+	text-align: center;
+}
+
+.lessons_table {
+	padding: 10px;
+	margin: 10px;
+}
+
+.scrollTable {
+	height: 150px;
+	overflow: scroll;
+}
+
+#gauge {
+	width: 700px;
+	height: 400px;
+}
+
+.studentPage h1 {
+	font-family: 'Electrolize', sans-serif;
+}
+
+.studentPage h3 {
+	font-family: 'Electrolize', sans-serif;
+}
+
+.studentLesson li{
+	list-style-type: none;
+}
+
+form.addScore input{
+	margin: 8px;
+}
+
+footer.navbar-default.navbar-fixed-bottom {
+  background:#f8f8f8;
+  border: 1px solid #e7e7e7;
+  color: #404040;
+  padding:1em 0;
+ }
+ 
+ footer.navbar-default.navbar-fixed-bottom p {
+   margin:0;
+ }
+
+ ul.footer li{
+ 	display: inline;
+ 	padding-left: 40px;
+ }

@@ -11,8 +11,8 @@ EngaugeRouter.config(["$routeProvider", "$locationProvider", ($routeProvider, $l
 		controller: "LessonsCtrl"
 		})
 		.when("/lessons/:id", {
-			templateUrl: "/engauge_templates/show",
-			controller: "LessonDetailCtrl"
+			templateUrl: "/engauge_templates/index",
+			controller: "LessonsCtrl"
 		})
 		.when("/students/:url", {
 			templateUrl: "/engauge_templates/student",
