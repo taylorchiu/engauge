@@ -74,7 +74,7 @@
 						<li><h2>{{lesson.name}}</h2>
 						<li><b>Current Average: </b>{{mean | number: 3}}</li>
 						<li><b>Lesson Date:</b>{{lesson.date | date: 'MMMM d, y' }}</li>
-						<li><b>Share this with students: </b> <a href="https://www.engaugenow.herokuapp.com/students/"{{lesson.url}}>https://www.engaugenow.herokuapp.com/students/{{lesson.url}}</a></li>
+						<li><b>Share this with students: </b> https://engaugenow.herokuapp.com/students/{{lesson.url}}</li>
 						<li><b>Access code: </b>{{lesson.access_code}}</li>
 						<li><b>Limit (per hour): </b>{{lesson.limit}}</li>
 					</ul>

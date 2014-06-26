@@ -9,14 +9,34 @@
       <a class="navbar-brand" href="/">EnGauge</a>
     </div>
 
+    <div ng-controller="ModalDemoCtrl">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
           <li class="navbar_li"><%= link_to "All Lessons", lessons_path %></a></li>
-          <li class="navbar_li"><a href="#">About</a></li>
+            <li class="navbar_li"><a href="#" ng-click="open()">About</a></li>
           <li class="navbar_li"><%= link_to "Sign Out", destroy_user_session_url, :method => "delete" %></li>
         <% else %>
-          <li class="navbar_li"><a href="<%=new_user_registration_url%>">Sign Up</button></a></li>
+          <li class="navbar_li"><a href="<%=new_user_registration_url%>" >Sign Up</a></li>
           <li class="navbar_li"><a href="<%=new_user_session_url%>">Sign In</a></li>
         <% end %>
       </ul>
+    </div>
 </div>
+
+<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">About this site</h3>
+        </div>
+        <div class="modal-body">
+          <p><a href="https://www.teachingchannel.org/videos/getting-instant-student-feedback">60 Seconds on The Value of Instant Student Feedback</a></p>
+          <p>EnGauge was created as my final project for a 12-week intensive coding course at General Assembly in San Francisco. I used AngularJS, Coffeescript and Ruby on Rails to build this project from scratch in one week. Other technologies I used were JQuery, Raphael, Angular UI for Bootstrap, Devise, and long polling.
+          <p><a href="http://www.github.com/taylorchiu/engauge">github.com/taylorchiu/engauge</a></p>
+          <p><a href="http://www.taylorparkerchiu.tumblr.com">taylorparkerchiu.tumblr.com</a> </p>
+          <p><a href="http://www.linkedin.com/in/taylorchiu">LinkedIn</a> </p>
+          <p> ~ Taylor Parker Chiu</p>
+          <p>June 26, 2014</p>  
+        </div>
+        <div class="modal-footer">
+            <em>Click outside the box to close</em>
+        </div>
+      </script>

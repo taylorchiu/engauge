@@ -1,8 +1,7 @@
-
 <div class="container">
 	<div class="homepage">
-		<a href="http://imgur.com/AzDIEh3"><img src="http://i.imgur.com/AzDIEh3.jpg" class="gears"/></a>
-		<h1><span style="color: #ED3300;">En</span>Gauge</h1>
+		<img src="https://i.imgur.com/AzDIEh3.jpg" class="gears"/>
+		<h1>EnGauge</h1>
 		<h2>Track Student Engagement in Real Time!</h2>
 	</div>
 	<div class="explain">
@@ -11,19 +10,35 @@
 				<h3>What Is It?</h3>
 				<h5>Engauge is a feedback loop for teachers to track student comprehension during and after class. </h5>
 			</div>
-			<div class="col-md-4">
-				<br>
-				<h3>Quick and Easy Feedback For Teachers</h3>
-			</div>
+			<div class="col-md-4" >
+				<div ng-controller="ModalDemoCtrl">
+           <h3 ng-click="open()" id="explain_h3">Quick, Easy Feedback For Teachers</h3>
+       	</div>
+      </div>
 			<div class="col-md-4">
 				<h3>How Does It Work?</h3>
-				<h5>
-					<ol>
-						<li>Teacher distributes unique link</li>
-						<li>Students report understanding with one click</li>
-						<li>Teacher sees updates instantly</li>
-					</ol>
-				</h5>
+				<h5><ol>
+					<li>Teacher distributes unique link</li>
+					<li>Students report understanding with one click</li>
+					<li>Teacher sees updates instantly</li>
 			</div>
 		</div>
-	</div>
+
+	
+			<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">About this site</h3>
+        </div>
+        <div class="modal-body">
+    			<p><a href="https://www.teachingchannel.org/videos/getting-instant-student-feedback">60 Seconds on The Value of Instant Student Feedback</a></p>
+        	<p>EnGauge was created as my final project for a 12-week intensive coding course at General Assembly in San Francisco. I used AngularJS, Coffeescript and Ruby on Rails to build this project from scratch in one week. Other technologies I used were JQuery, Raphael, Angular UI for Bootstrap, Devise, and long polling.
+        	<p><a href="http://www.github.com/taylorchiu/engauge">github.com/taylorchiu/engauge</a></p>
+        	<p><a href="http://www.taylorparkerchiu.tumblr.com">taylorparkerchiu.tumblr.com</a> </p>
+        	<p><a href="http://www.linkedin.com/in/taylorchiu">LinkedIn</a> </p>
+        	<p> ~ Taylor Parker Chiu</p>
+        	<p>June 26, 2014</p>	
+        </div>
+        <div class="modal-footer">
+ 						<em>Click outside the box to close</em>
+        </div>
+			</script>
