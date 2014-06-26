@@ -66,7 +66,7 @@ EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routePar
 			console.log(data)
 			$scope.gage = new JustGage(
 				id: "gauge"
-				value: 3
+				value: 2.5
 				min: 0
 				max: 5
 				title: "Current Average"

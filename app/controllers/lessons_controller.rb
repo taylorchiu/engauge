@@ -16,10 +16,9 @@ class LessonsController < ApiController
 	end
 
 	def create
-		@lesson = Lesson.new(lesson_params)
+		@lesson = current_user.lessons.create(lesson_params)
 		@lesson.access_code = SecureRandom.urlsafe_base64(5)
 		@lesson.url = SecureRandom.urlsafe_base64(16)
-		@lesson.user_id = current_user.id
 		@lesson.save
 		respond_with @lesson
 	end
@@ -36,7 +35,8 @@ class LessonsController < ApiController
 		if @lesson.user_id = current_user.id
 			respond_with @lesson.destroy
 		else
-			
+			render nothing: true, status: 401
+		end
 	end
 
 	private

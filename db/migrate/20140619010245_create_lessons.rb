@@ -7,7 +7,7 @@ class CreateLessons < ActiveRecord::Migration
       t.timestamp :expiration
       t.integer :limit
       t.float :current_avg
-      t.references :user_id, index: true
+      t.references :user, index: true
       t.timestamps
     end
   end
