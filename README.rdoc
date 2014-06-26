@@ -1,28 +1,41 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The EnGauge App is a web app for teachers to monitor student comprehension in near real-time. Teachers create a new lesson,
+share a unique URL with their students, and watch as an animate chart displays and updates the class aggregate date.  Students
+can submit feedback on a scale of 0-5 to report how comfortable they feel about the lesson material.
 
-Things you may want to cover:
+This app was built from scratch in one week as my final project of a 12 week coding course at General Assembly in San Francisco.
+As an exercise in coding, my goal was to build a "realtime" app that updated data dynamically with interesting data visualization.
+I also wanted to practice writing Javascript and Coffeescript and learn a new front-end framework (AngularJS), while
+building on my foundation in Ruby and Rails. Lastly, I hoped to fulfill a need demonstrated in General Assembly's classrooms,
+to monitor student comprehension and engagement both during and after lectures.
 
-* Ruby version
+See the app in action at: https://engaugenow.herokuapp.com
+To run the app locally, fork and clone this repo, bundle install, start a rails server and open at localhost:3000
 
-* System dependencies
+Technologies Used:
+- AngularJS
+- Coffeescript
+- Javascript
+- Ruby on Rails
+- PostgreSQL
+- Raphael
+- JQuery
+- JustGage (www.justgage.com)
+- Devise
+- Angular UI Bootstrap
+- Twitter Bootstrap 3
+- long polling
+- Heroku
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+Notes on Version 1 (June 26, 2014):
+There are a few features that are not yet functional, which I will deploy in the coming weeks.
+- ACCESS CODES: There is not yet a feature to ask for and verify an access code. Any one with the url can score any other lesson.
+- LIMIT: There is currently no validation on the limit of scores that students are allowed to submit per hour
+- EXPIRATION: There is currently no validation on the expiration date (that the expiration date is later than today and later than
+the lesson date; the expiration date does not prevent a user from submitting scores)
+- COMMENTS: I would like to allow each score to be submitted with a comment
+- Testing: I plan to add Rspec and Jasmine tests
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
