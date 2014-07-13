@@ -108,6 +108,21 @@ tbody tr:nth-child(odd) {
    background-color: #ccc;
 }
 
+#student_row1 {
+	padding-top: 5%;
+}
+
+#student_row1 {
+	text-align: center;
+}
+
+#student_row2 {
+}
+
+.color {
+	color: #f80808;
+}
+
 .score_form {
 	text-align: center;
 }
@@ -183,8 +198,13 @@ tbody tr:nth-child(odd) {
 	font-family: 'Electrolize', sans-serif;
 }
 
+ul.studentLesson {
+	margin-left: 15%;
+}
+
 .studentLesson li{
 	list-style-type: none;
+	padding-top: 1%;
 }
 
 form.addScore input{

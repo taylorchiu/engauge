@@ -5,7 +5,7 @@ var ModalDemoCtrl = function ($scope, $modal) {
   $scope.open = function (size) {
 
     var modalInstance = $modal.open({
-      templateUrl: 'myModalContent.html',
+      templateUrl: 'AboutModal.html',
       size: size,
       resolve: {
         items: function () {
