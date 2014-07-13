@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass', '~> 3.1.1'
+# gem 'bootstrap-sass', '~> 3.1.1'
 
 # adding Angular.js https://github.com/hiravgandhi/angularjs-rails
 gem 'angularjs-rails'

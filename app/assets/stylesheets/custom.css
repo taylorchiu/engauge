@@ -1,22 +1,29 @@
+#navbar {
+	background-color: #808080;
+	height: 52px;
+	width: 100%;
+}
+
 .navbar .navbar-default-fluid{
 	margin: 0px;
 	width: 100% !important;
+	height: 100%;
+	background-color: #808080;
+	border: none;
 }
 
 .navbar-header .navbar-brand {
 	font-family: 'Electrolize', sans-serif;
 	font-size: 44px;
-	color: #f8f8f8;
-}
-
-ul.navbar.nav:hover {
-	background-color: #808080;
+	color: #f80808;
+	border: none;
 }
 
 .navbar_li a{
 	color: #f8f8f8 !important;
 	font-family: 'Electrolize', sans-serif !important;
 	font-size: 20px;
+	height: 100%;
 
 }
 
@@ -31,13 +38,13 @@ ul.navbar.nav:hover {
 }
 
 .navbar_li:hover {
-	background-color: #808080;
+	background-color: #f808080;
 	color: #ED3300;
 }
 
 .navbar-brand:hover {
-	background-color: #808080;
-	color: #ED3300;
+	background-color: #f808080;
+	color: black;
 }
 
 a {
@@ -106,6 +113,7 @@ tbody tr:nth-child(odd) {
 }
 
 .homepage {
+	padding: 5%;
 	text-align: center;
 	font-family: 'Electrolize', sans-serif !important;
 }
@@ -175,10 +183,11 @@ form.addScore input{
 }
 
 footer.navbar-default.navbar-fixed-bottom {
-  background:#f8f8f8;
-  border: 1px solid #e7e7e7;
+	background-color: #808080;
   color: #404040;
-  padding:1em 0;
+  text-align: center;
+  padding: 1%
+  font-family: Helvetica Neue;
  }
  
  footer.navbar-default.navbar-fixed-bottom p {
@@ -188,4 +197,13 @@ footer.navbar-default.navbar-fixed-bottom {
  ul.footer li{
  	display: inline;
  	padding-left: 40px;
+ 	color: #eee;
+ }
+
+ ul.footer a {
+ 	color: #eee;
+ }
+
+ .modal-footer {
+ 	text-align: center;
  }
