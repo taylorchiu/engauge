@@ -49,7 +49,7 @@
 		<div class="col-md-4" id="lessons_list">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 id="past_lessons_h2">Past Lessons</h2>
+					<h3 id="past_lessons_h3">All Lessons</h3>
 				</div>
 			</div>
 			<div class="row">
@@ -64,7 +64,7 @@
 						<tr ng-repeat="lesson in lessons">
 							<td><a href="/lessons/{{lesson.id}}">{{lesson.name}}</a></td>
 							<td><a href="/lessons/{{lesson.id}}">{{lesson.date}}</a></td>
-							<td><button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete Lesson</button></td>
+							<td><button ng-click="deleteLesson()" class="btn btn-xs btn-danger">Delete</button></td>
 						</tr>
 					</table>
 				</div> <!-- bootstrap col-xs-12 -->
@@ -75,9 +75,9 @@
 		<div class="col-md-8">
 				<div ng-show="checkID()" >
 					<ul class="lesson_details_list">
-						<li><h2>{{lesson.name}}</h2>
+						<li><h3><span id="current_lesson_name">{{lesson.name}}</span></h3>
 						<li><b>Current Average: </b>{{mean | number: 3}}</li>
-						<li><b>Lesson Date:</b>{{lesson.date | date: 'MMMM d, y' }}</li>
+						<li><b>Lesson Date: </b>{{lesson.date | date: 'MMMM d, y' }}</li>
 						<li><b>Share this with students: </b> https://engaugenow.herokuapp.com/students/{{lesson.url}}</li>
 						<li><b>Access code: </b>{{lesson.access_code}}</li>
 						<li><b>Limit (per hour): </b>{{lesson.limit}}</li>
