@@ -12,7 +12,11 @@
 				<button id="addLessonButton" class="btn btn-info" ng-click="hide_form = !hide_form"> Create New Lesson</button>
 			</span>
 		</div>
-		<div class="col-md-8"></div>
+		<div class="col-md-8">
+			<div ng-controller="AlertDemoCtrl">
+  			<alert ng-hide="lesson.id" ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+			</div>
+		</div>
 	</div>
 
 	<div class="row">

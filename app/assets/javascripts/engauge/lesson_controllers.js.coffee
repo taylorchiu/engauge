@@ -30,18 +30,10 @@ EngaugeControllers.controller("LessonsCtrl", ["$scope", "$http", "LessonsFactory
 EngaugeControllers.controller("LessonDetailCtrl", ["$scope", "$http", "$routeParams", "LessonsFactory", "ScoresFactory", ($scope, $http, $routeParams, LessonsFactory, ScoresFactory)->
 	console.log($scope.gage)
 
-	# $scope.gage = new JustGage(
-	# 									id: "gauge"
-	# 									value: 3
-	# 									min: 0
-	# 									max: 5
-	# 									title: "Current Average"
-	# 							)
 	if $routeParams.id
 		LessonsFactory.get {id: $routeParams.id}, (data)->
 			$scope.lesson = data
 
-		
 		array = []
 
 		calculateAverage = (scores, gage) ->
