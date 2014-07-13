@@ -129,7 +129,6 @@ tbody tr:nth-child(odd) {
 
 .addLessonForm {
 	display: inline;
-	padding: 10px;
 }
 
 #addLessonButton {
@@ -149,6 +148,13 @@ tbody tr:nth-child(odd) {
 
 #saveLessonButton {
 	margin: 10px;
+	background-color: #404040;
+	color: white;
+}
+
+#saveLessonButton:hover {
+	background-color: #6E6E6E;
+	color: #ED3300;
 }
 
 #past_lessons_h3 {
