@@ -14,6 +14,6 @@ ScoresControllers.controller("ScoresCtrl", ["$scope", "$http", "$routeParams", "
 		console.log($scope.newScore)
 		$scope.lastScore = $scope.newScore.score
 		$scope.newScore = {};
-		# add logic to display the most recent score and update it when a new score is submitted
+		# displays the most recent score and update it when a new score is submitted
 	
 ])
